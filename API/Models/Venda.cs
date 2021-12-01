@@ -9,6 +9,8 @@ namespace API.Models
         public int VendaId { get; set; }
         public string Cliente { get; set; }
         public List<ItemVenda> Itens { get; set; }
+        public int PagamentoId { get; set; }
         public DateTime CriadoEm { get; set; }
+        
     }
 }

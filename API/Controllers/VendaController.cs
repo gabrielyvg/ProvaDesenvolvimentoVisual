@@ -15,6 +15,19 @@ namespace API.Controllers
             _context = context;
         }
 
+    [HttpPost]
+    [Route("create")]
+    public  IActionResult Cadastrar([FromBody] Venda venda){
+
+      // CADASTRA VENDA
+     /*  venda.Itens = _context.Vendas.Find(venda.Itens); */
+      _context.Vendas.Add(venda);
+      _context.SaveChanges();
+      return Created("", venda);
+
+    }
+
+
         //GET: api/venda/list
         //ALTERAR O MÉTODO PARA MOSTRAR TODOS OS DADOS DA VENDA E OS DADOS RELACIONADOS
         [HttpGet]
@@ -24,4 +37,4 @@ namespace API.Controllers
             return Ok(_context.Vendas.ToList());
         }
     }
-}
+}  

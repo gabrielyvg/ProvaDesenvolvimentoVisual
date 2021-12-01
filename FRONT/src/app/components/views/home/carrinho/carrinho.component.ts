@@ -15,7 +15,7 @@ export class CarrinhoComponent implements OnInit {
 
     ngOnInit(): void {
         let carrinhoId = localStorage.getItem("carrinhoId")! || "";
-        this.itemService.getByCartId(carrinhoId).subscribe((itens) => {
+        this.itemService.getByCartId(carrinhoId).subscribe((itens: ItemVenda[]) => {
             this.itens = itens;
             this.valorTotal = this.itens.reduce((total, item) => {
                 return total + item.preco * item.quantidade;

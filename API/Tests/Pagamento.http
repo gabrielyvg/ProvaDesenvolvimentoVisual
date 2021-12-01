@@ -1,0 +1,8 @@
+POST https://localhost:5001/api/pagamento/cadastrar
+Content-Type: application/json
+
+{
+    "FormaDePagamento" : "Cartao",
+    "Cartao" : "Debito"
+  
+}
